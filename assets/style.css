@@ -1,0 +1,23 @@
+header {
+    padding: 3% 0;
+    font-size:xx-large;
+    font-weight:bold;
+}
+
+.memberName {
+    font-size:x-large;
+    font-weight:bold;
+}
+
+.memberRole {
+    font-size:large;
+    font-weight:bold;
+}
+
+.list-group {
+    padding: 5%;
+}
+
+.listContainer {
+    background-color: rgb(235, 235, 235);
+}

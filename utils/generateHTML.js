@@ -1,8 +1,56 @@
 //seperate functions to write each type of card? and then call in the <section> in the final function?
+function generateManagerCard(data) {
+    return `<div class="card col mx-3 h-100 shadow" style="width:300px;">
+            <div class="card-body bg-primary text-white">
+                <h5 class="card-title memberName">${data.managerName}</h5>
+                <p class="card-text memberIcon"><i class="fas fa-mug-hot"></i> <span class="memberRole">Manager</span></p>
+            </div>
+            <div class="container listContainer">
+                <ul class="list-group">
+                    <li class="list-group-item">ID:<span class="identNumber">${data.managerId}</span></li>
+                    <li class="list-group-item">Email: <span class="email" >${data.managerEmail}</span></li>
+                    <li class="list-group-item">Office Number:<span class="officeNumber">${data.officeNumber}</span></li>
+                </ul>
+            </div>
+        </div>
+    `
+};
+
+function generateEngineerCard(data) {
+    return `<div class="card col mx-3 h-100 shadow" style="width:300px">
+    <div class="card-body bg-primary text-white">
+        <h5 class="card-title memberName">${data.memberName}</h5>
+        <p class="card-text memberIcon"><i class="fas fa-glasses"></i> <span class="memberRole">Engineer</span></p>
+    </div>
+    <div class="container listContainer">
+        <ul class="list-group">
+            <li class="list-group-item">ID:<span class="identNumber">${data.memberId}</span></li>
+            <li class="list-group-item">Email: <span class="email" >${data.memberEmail}</span></li>
+            <li class="list-group-item">GitHub: <span class="github">${data.github}</span></li>
+        </ul>
+    </div>
+</div>`
+};
+
+function generateInternCard(data) {
+    return `<div class="card col mx-3 h-100 shadow" style="width:300px">
+    <div class="card-body bg-primary text-white">
+        <h5 class="card-title memberName">${data.memberName}</h5>
+        <p class="card-text memberIcon"><i class="fas fa-glasses"></i> <span class="memberRole">Engineer</span></p>
+    </div>
+    <div class="container listContainer">
+        <ul class="list-group">
+            <li class="list-group-item">ID:<span class="identNumber">${data.memberId}</span></li>
+            <li class="list-group-item">Email: <span class="email" >${data.memberEmail}</span></li>
+            <li class="list-group-item">School: <span class="school">${data.school}</span></li>
+        </ul>
+    </div>
+</div>`
+};
+
 //function to write general html
 function generateHTML(data) {
-    return `
-    <!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,13 +69,14 @@ function generateHTML(data) {
         My Team
     </header>
     <section class="row row-cols-3 display: block justify-content-center mt-5">
-
+        ${generateManagerCard(data)}
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 </body>
 
-</html>
-    `
-}
+</html>`
+};
+
+module.exports = generateHTML;
